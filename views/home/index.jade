@@ -1,17 +1,24 @@
 extends ../layout
 
-block body
-  h1.header
-    a(href='/') Hello world
-  #content
-    h2 It works!
-    p You've successfully installed the Sails Framework.
-    p Sails is a modern, realtime MVC framework for the Node.js platform.  It helps you build apps fast.
-    p
-      a.button(href="https://github.com/balderdashy/sails/wiki")
-        span Documentation
-      a.button(href="https://github.com/balderdashy/sails/wiki/Changelog")
-        span Changelog
-
-  .footer
-    a.copyright(href="http://sailsjs.com") built by Mahmoud Saada
+block content
+  .hero-unit
+    h1(DIR="RTL") اﻟﺴﻼﻡ ﻋﻠﻴﻜﻢ
+  #container
+    #slider.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled='false')
+      .ui-slider-segment
+      .ui-slider-segment
+      .ui-slider-segment
+      .ui-slider-range.ui-widget-header.ui-slider-range-min(style='width: 0%;')
+      a.ui-slider-handle.ui-state-default.ui-corner-all(href='#', style='left: 0%;')
+    .btn.btn-large.btn-success BUTTON
+    .btn.btn-large.btn-info BUTTON
+    .btn.btn-large.btn-warning BUTTON
+    .btn.btn-large.btn-danger BUTTON
+    h2 SUCCESS!
+    p 
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
