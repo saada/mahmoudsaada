@@ -3,9 +3,7 @@
 $(function () {
     // Custom selects
     $("select").dropkick();
-});
 
-$(document).ready(function() {
     // Todo list
     $(".todo li").click(function() {
         $(this).toggleClass("todo-done");
@@ -23,7 +21,7 @@ $(document).ready(function() {
         max: 5,
         value: 2,
         orientation: "horizontal",
-        range: "min",
+        range: "min"
     });
 
     // JS input/textarea placeholder
@@ -44,8 +42,57 @@ $(document).ready(function() {
 
     // Disable link click not scroll top
     $("a[href='#']").click(function() {
-        return false
+        return false;
     });
 
+    $('.navbar').scrollspy({offest: -60});
+    $('.navbar li a').click(function(e) {
+        // scrollBy(0, -60);
+        $('html, body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top-60
+        }, 300);
+        e.preventDefault();
+    });
+    insertStrings();
 });
 
+var strings = [
+    "Hello there!",
+    "Welcome to my website...",
+    "!اﻟﺴﻼﻡ ﻋﻠﻴﻜﻢ",
+    "Anyway...",
+    "Check out some of my music,",
+    "Projects,",
+    "and crafts...",
+    "Enjoy!!! :)"
+];
+var i = 0;
+function insertStrings() {
+    $el = $('#greeting');
+    $el.focus();
+
+    var timeout = setTimeout(function() {
+        insertString($el, strings[i]);
+        i++;
+        $el.val('');
+        if(i >= strings.length) {
+            clearInterval(timeout);
+            $el.val('');
+        }
+    }, 500);
+}
+
+function insertString($el, string) {
+    var arr = string.split('');
+    var j = 0;
+    var interval = setInterval(function() {
+        var oldText = $el.val();
+        $el.val(oldText+arr[j]);
+        j++;
+        if(j >= arr.length){
+            clearInterval(interval);
+            if(i < strings.length)
+                insertStrings();
+        }
+    }, 60);
+}
