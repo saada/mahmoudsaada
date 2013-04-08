@@ -1,5 +1,5 @@
-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-script window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\\/script>')
+script(src='components/modernizr/modernizr.js')
+script(src='components/jquery/jquery.min.js')
 script(src='js/plugins.js')
 script
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
@@ -8,5 +8,7 @@ script
 	s.parentNode.insertBefore(g,s)}(document,'script'));
 | !{assets.js()}
 //- MY SCRIPTS
-script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
-script(src='js/main.js')
+script(src='components/bootstrap/bootstrap.js')
+//- script(src='js/main.js')
+script(data-main="js/build", src="components/requirejs/require.js")
+//- script(data-main="js/main.min", src="components/requirejs/require.js")
